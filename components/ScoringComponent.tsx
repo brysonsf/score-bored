@@ -62,11 +62,12 @@ export default function ScoreBoard() {
     }
     return <SafeAreaView style={styles.container}>
     <View>
-        <Text selectable={false} style={{fontSize: 33, maxWidth:475,backgroundColor:'black', color: 'gold'}}>{winner}</Text>
+        <Text selectable={false} style={{fontSize: 33, maxWidth:500,backgroundColor:'black', color: 'gold'}}>{winner}</Text>
         <Button color="grey" 
             onPress={() => resetGame()} title="Reset Game"
             />
     </View>
+
     <View>
         <Text selectable={false} onPress={() => upTick()} style={{textAlign: 'center', color: '#38023B', minWidth: 300, fontSize: 100}}>
         <Text style={{fontSize: 50}}>Team 1</Text><br></br>{score1}</Text>
@@ -78,11 +79,15 @@ export default function ScoreBoard() {
     <View>
       
         <View style={styles.fixToText}>
-            <Button color="red" onPress={() => downTick()} title="-1"
-                />
-            <Button color="green" onPress={() => upTick()} title="+1"
-                />
+            <View style={styles.smallothy}>
+                <Button color="red" onPress={() => downTick()} title="-1"/>
+            </View>
+            
+            <View style={styles.smallothy}>
+                <Button color="green" onPress={() => upTick()} title="+1"/>
+            </View>
         </View>
+
     </View>
 
     <Separator />
@@ -98,11 +103,14 @@ export default function ScoreBoard() {
 
     <View>
         <View style={styles.fixToText}>
-            <Button color="red" onPress={() => downTick2()} title="-1"
-                />
-                <Button color="green" onPress={() => upTick2()} title="+1"
-                />
+            <View style={styles.smallothy}>
+                <Button color="red" onPress={() => downTick2()} title="-1"/>
             </View>
+            
+            <View style={styles.smallothy}>
+                <Button color="green" onPress={() => upTick2()} title="+1"/>
+            </View>
+        </View>
     </View>
             
   </SafeAreaView>
@@ -120,7 +128,10 @@ const styles = StyleSheet.create({
     },
     fixToText: {
       flexDirection: 'row',
-      justifyContent: 'space-between',
+      width: 500,
+    },
+    smallothy: {
+        width: 250,
     },
     separator: {
       marginVertical: 8,
