@@ -5,7 +5,6 @@ import {
   View,
   SafeAreaView,
   Text,
-  Alert,
 } from 'react-native';
 const Separator = () => <View style={styles.separator} />;
 
