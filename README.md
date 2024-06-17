@@ -1,0 +1,1 @@
+Base file for the simple scoreboard app!
