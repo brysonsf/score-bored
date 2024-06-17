@@ -57,3 +57,7 @@ Join our community of developers creating universal apps.
 - npm run web
 
 can also do npm start then connect on expo go on my phone; make sure to click the web waiting link that is loaded i think it is necessary
+
+npx expo start
+
+https://docs.expo.dev/tutorial/build-a-screen/
