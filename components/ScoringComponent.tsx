@@ -62,13 +62,13 @@ export default function ScoreBoard() {
     }
     return <SafeAreaView style={styles.container}>
     <View>
-        <Text style={{fontSize: 33}}>{winner}</Text>
+        <Text selectable={false} style={{fontSize: 33, maxWidth:475,backgroundColor:'black', color: 'gold'}}>{winner}</Text>
         <Button color="grey" 
             onPress={() => resetGame()} title="Reset Game"
             />
     </View>
     <View>
-        <Text onPress={() => upTick()} style={{textAlign: 'center', color: '#38023B', minWidth: 300, fontSize: 100}}>
+        <Text selectable={false} onPress={() => upTick()} style={{textAlign: 'center', color: '#38023B', minWidth: 300, fontSize: 100}}>
         <Text style={{fontSize: 50}}>Team 1</Text><br></br>{score1}</Text>
         <Button
             onPress={() => resetScore()} title="Reset Score"
@@ -88,7 +88,7 @@ export default function ScoreBoard() {
     <Separator />
 
     <View>
-    <Text onPress={() => upTick2()} style={{textAlign: 'center', color: '#38023B', minWidth: 300, fontSize: 100}}>
+    <Text selectable={false}  onPress={() => upTick2()} style={{textAlign: 'center', color: '#38023B', minWidth: 300, fontSize: 100}}>
         <Text style={{fontSize: 50}}>Team 2</Text><br></br>{score2}</Text>
         
         <Button
