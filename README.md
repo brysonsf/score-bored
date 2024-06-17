@@ -61,3 +61,5 @@ can also do npm start then connect on expo go on my phone; make sure to click th
 npx expo start
 
 https://docs.expo.dev/tutorial/build-a-screen/
+build screen for the following: build 2 counter buttons
+https://shaqqour.medium.com/how-to-create-click-me-button-with-a-counter-in-react-native-32bcf1d68a5e
