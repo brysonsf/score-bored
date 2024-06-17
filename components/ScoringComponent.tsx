@@ -5,16 +5,23 @@ import {
   View,
   SafeAreaView,
   Text,
+  Alert,
 } from 'react-native';
 const Separator = () => <View style={styles.separator} />;
 
 export default function ScoreBoard() {
     const [score1, setState1] = useState(0);
     const [score2, setState2] = useState(0);
+    const [winner, setWinner] = useState('Nobody is the winner (yet)!');
+    
     useEffect(() => {
         if(checkWin()!==0){
-            console.log('Team ' + checkWin() + ' has won.');
-        }   
+            console.log(checkWin());
+            setWinner('WINNER WINNER CHICKEN DINNER!? Team ' + checkWin() + ' is the winner!');
+        }else{
+            setWinner('Nobody is the winner (yet)!');
+
+        }
     });
   
     const upTick = () => {
@@ -55,12 +62,14 @@ export default function ScoreBoard() {
     }
     return <SafeAreaView style={styles.container}>
     <View>
+        <Text style={{fontSize: 33}}>{winner}</Text>
         <Button color="grey" 
             onPress={() => resetGame()} title="Reset Game"
             />
     </View>
     <View>
-        <Text onPress={() => upTick()} style={{textAlign: 'center', color: '#38023B', minWidth: 300, fontSize: 100}}>{score1}</Text>
+        <Text onPress={() => upTick()} style={{textAlign: 'center', color: '#38023B', minWidth: 300, fontSize: 100}}>
+        <Text style={{fontSize: 50}}>Team 1</Text><br></br>{score1}</Text>
         <Button
             onPress={() => resetScore()} title="Reset Score"
             />
@@ -79,8 +88,9 @@ export default function ScoreBoard() {
     <Separator />
 
     <View>
-        <Text onPress={() => upTick2()} style={{textAlign: 'center', color: '#38023B', minWidth: 300, fontSize: 100}}>{score2}</Text>
-
+    <Text onPress={() => upTick2()} style={{textAlign: 'center', color: '#38023B', minWidth: 300, fontSize: 100}}>
+        <Text style={{fontSize: 50}}>Team 2</Text><br></br>{score2}</Text>
+        
         <Button
             onPress={() => resetScore2()} title="Reset Score"
         />
