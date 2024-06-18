@@ -15,7 +15,6 @@ export default function ScoreBoard() {
     
     useEffect(() => {
         if(checkWin()!==0){
-            console.log(checkWin());
             setWinner('WINNER WINNER CHICKEN DINNER!? Team ' + checkWin() + ' is the winner!');
         }else{
             setWinner('Nobody is the winner (yet)!');
@@ -61,7 +60,7 @@ export default function ScoreBoard() {
     }
     return <SafeAreaView style={styles.container}>
     <View>
-        <Text selectable={false} style={{fontSize: 33, maxWidth:500,backgroundColor:'black', color: 'gold'}}>{winner}</Text>
+        <Text selectable={false} style={{fontSize: 33, left: 75, maxWidth:350, backgroundColor:'black', color: 'gold', textAlign: 'center'}}>{winner}</Text>
         <Button color="grey" 
             onPress={() => resetGame()} title="Reset Game"
             />
@@ -69,7 +68,7 @@ export default function ScoreBoard() {
 
     <View>
         <Text selectable={false} onPress={() => upTick()} style={{textAlign: 'center', color: '#38023B', minWidth: 300, fontSize: 100}}>
-        <Text style={{fontSize: 50}}>Team 1</Text><br></br>{score1}</Text>
+        <Text style={{fontSize: 45}}>Team 1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Text>{score1}</Text>
         <Button
             onPress={() => resetScore()} title="Reset Score"
             />
@@ -93,7 +92,7 @@ export default function ScoreBoard() {
 
     <View>
     <Text selectable={false}  onPress={() => upTick2()} style={{textAlign: 'center', color: '#38023B', minWidth: 300, fontSize: 100}}>
-        <Text style={{fontSize: 50}}>Team 2</Text><br></br>{score2}</Text>
+        <Text style={{fontSize: 45}}>Team 2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Text>{score2}</Text>
         
         <Button
             onPress={() => resetScore2()} title="Reset Score"
